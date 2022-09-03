@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alex Palchyk</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Secular+One">
+<style>
+body,h1 {font-family: "Secular One", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-color: #1b2531;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.svgBox svg{
+  fill: none;
+  margin: auto;
+  display: block;
+  transform: scale(2.3);
+  stroke: url(#grad);
+  stroke-width: 15;
+  stroke-dasharray: 60 172;
+  stroke-linecap: round;
+  animation: line 4s linear infinite;
+}
+@keyframes line {
+  0%{
+    stroke-dashoffset: 0;
+  }
+  100%{
+    stroke-dashoffset: 232;
+  }
+}
+.svgBox svg:nth-of-type(1){
+  animation: none;
+  stroke: #222;
+  stroke-dasharray: none;
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-center">
+    
+  </div>
+  <div class="w3-display-middle">
+    <div class="svgBox">
+      <svg width="300px" height="200px" viewBox="0 0 187.3 93.7" >
+        <defs>
+          <linearGradient id="grad">
+            <stop offset="0%" stop-color="#07BDFF"/>
+            <stop offset="100%" stop-color="#2B75FF"/>
+          </linearGradient>
+        </defs>
+        <path
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+        <path
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+      </svg>
+      <svg style="margin-top: -200px;" width="300px" height="200px" viewBox="0 0 187.3 93.7" >
+        <path
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+        <path
+          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
+      </svg>
+    </div>
+    <h1 class="w3-jumbo w3-animate-top">Alex Palchyk</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    <p class="w3-large w3-center">DevOps Engineer</p>
+    <p class="w3-center">
+      <a href="https://github.com/palchyk-alex">
+        <img src="images/icons/github.png" alt="My GitHub" style="width:45px;height:45px;">
+      </a>
+      <a href="https://www.linkedin.com/in/alew99/">
+        <img src="images/icons/linkedin.png" alt="My Linkedin" style="width:45px;height:45px;">
+      </a>
+    </p>
+  </div>
+  <div class="w3-display-bottomright w3-padding-large w3-small">
+    Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
+  </div>
+</div>
+
+</body>
+</html>
+
