@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Alex Palchyk - Projects</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Secular+One">
+<style>
+body,h1 {font-family: "Secular One", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-color: #1b2531;
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.project-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+.project-card:hover {
+  transform: scale(1.05);
+}
+.project-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-container w3-padding-32">
+        <a href="index.html">
+            ← Home 
+        </a>
+    </div>
+  <div class="w3-container w3-padding-64">
+    <h1 class="w3-center w3-jumbo">My Projects</h1>
+    <hr class="w3-border-grey" style="margin:auto;width:40%">
+    
+    <div class="w3-row-padding">
+      <a href="https://github.com/palchyk-alex/terraform-example" style="text-decoration: none; color: inherit;">
+      <div class="w3-third">
+        <div class="project-card w3-center">
+          <img src="images/icons/terraform.png" alt="Cloud Icon" class="project-icon">
+          <h3>Terraform Usage</h3>
+          <p>An opinionated example of using modularised Terraform for Infrastructure as Code.</p>
+        </div>
+      </div>
+      </a>
+      
+      <a href="https://github.com/palchyk-alex/gha-example" style="text-decoration: none; color: inherit;">
+      <div class="w3-third">
+        <div class="project-card w3-center">
+          <img src="images/icons/github.png" alt="Git Icon" class="project-icon">
+          <h3>GitHub Actions Usage</h3>
+          <p>Python application with GitHub Actions.</p>
+        </div>
+      </div>
+      </a>
+      
+      <a href="https://gitlab.com/palchyk.alex/ci-example" style="text-decoration: none; color: inherit;">
+      <div class="w3-third">
+        <div class="project-card w3-center">
+          <img src="images/icons/gitlab.png" alt="Git Icon" class="project-icon">
+          <h3>GitLab CI Usage</h3>
+          <p>Java application with GitLab CI.</p>
+        </div>
+      </div>
+      </a>
+    </div>
+    
+    
+  </div>
+  <div class="w3-display-bottomright w3-padding-large w3-small">
+    Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
+  </div>
+</div>
+
+</body>
+</html>
