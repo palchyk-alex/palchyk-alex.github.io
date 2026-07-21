@@ -1,102 +1,290 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Alex Palchyk</title>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alex Palchyk</title>
 <link rel="icon" href="icon.png">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Secular+One">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-body,h1 {font-family: "Secular One", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-color: #1b2531;
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
+:root {
+  --bg: #0a0e14;
+  --green: #00ff9c;
+  --body: #c0c8d0;
+  --muted: #5c6773;
+  --amber: #ffb454;
+  --green-a: rgba(0, 255, 156, 0.2);
+  --green-b: rgba(0, 255, 156, 0.06);
 }
-.svgBox svg{
-  fill: none;
-  margin: auto;
-  display: block;
-  transform: scale(2.3);
-  stroke: url(#grad);
-  stroke-width: 15;
-  stroke-dasharray: 60 172;
-  stroke-linecap: round;
-  animation: line 4s linear infinite;
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 16px;
+  line-height: 1.5;
 }
-@keyframes line {
-  0%{
-    stroke-dashoffset: 0;
-  }
-  100%{
-    stroke-dashoffset: 232;
-  }
+
+a { color: inherit; text-decoration: none; }
+
+a:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
-.svgBox svg:nth-of-type(1){
-  animation: none;
-  stroke: #222;
-  stroke-dasharray: none;
+
+.intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  gap: 1.75rem;
 }
-.round-image {
+
+.terminal-line {
+  color: var(--green);
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  min-height: 4.5rem;
+  text-align: left;
+}
+
+.line { display: block; }
+
+.cursor {
+  display: inline-block;
+  background: var(--green);
+  width: 0.55em;
+  height: 1em;
+  vertical-align: -0.15em;
+  animation: blink 1s steps(2) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+.photo {
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
   object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(0, 255, 156, 0.4);
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials img {
+  width: 45px;
+  height: 45px;
+  display: block;
+  transition: filter 0.15s ease;
+}
+
+.socials a:hover img,
+.socials a:focus-visible img {
+  filter: drop-shadow(0 0 6px var(--green));
+}
+
+.section {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+}
+
+.section-header {
+  color: var(--green);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.section hr {
+  border: 0;
+  border-top: 1px solid var(--green-a);
+  margin: 0.75rem 0 2rem;
+}
+
+.about-body p {
+  color: var(--body);
+  max-width: 65ch;
+  margin: 0 auto 1rem;
+  line-height: 1.65;
+}
+
+.cert-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cert-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  color: var(--green);
+  transition: background 0.15s ease;
+}
+
+.cert-row:hover { background: var(--green-b); }
+.cert-row:hover .cert-arrow { color: var(--amber); }
+
+.cert-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.cert-title { flex: 1; }
+
+.cert-arrow {
+  color: var(--muted);
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer a { color: var(--muted); }
+.footer a:hover { color: var(--amber); }
+
+@media (max-width: 600px) {
+  .section { padding: 3rem 1rem; }
+  .terminal-line { font-size: 1.15rem; min-height: 3.5rem; }
+  .cert-icon { width: 28px; height: 28px; }
+  .cert-row { padding: 0.5rem 0.75rem; gap: 0.75rem; }
+  .cert-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }
 </style>
 </head>
 <body>
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-center">
-    
+<section class="intro">
+  <h1 class="terminal-line" aria-label="Alex Palchyk, DevOps Engineer">
+    <span class="line" id="line1"><span class="cursor" id="cursor" aria-hidden="true"></span></span>
+    <span class="line" id="line2"></span>
+  </h1>
+  <img src="images/profile.jpg" alt="Alex Palchyk" class="photo">
+  <div class="socials">
+    <a href="https://github.com/palchyk-alex" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+      <img src="images/icons/github.png" alt="GitHub">
+    </a>
+    <a href="https://www.linkedin.com/in/aliaksandr-p-1a7856240/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+      <img src="images/icons/linkedin.png" alt="LinkedIn">
+    </a>
   </div>
-  <div class="w3-display-topmiddle w3-container w3-padding-32 w3-center">
-    <div class="svgBox">
-      <svg width="300px" height="200px" viewBox="0 0 187.3 93.7" >
-        <defs>
-          <linearGradient id="grad">
-            <stop offset="0%" stop-color="#07BDFF"/>
-            <stop offset="100%" stop-color="#2B75FF"/>
-          </linearGradient>
-        </defs>
-        <path
-          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-        <path
-          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-      </svg>
-      <svg style="margin-top: -200px;" width="300px" height="200px" viewBox="0 0 187.3 93.7" >
-        <path
-          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-        <path
-          d="M93.9,46.4c9.3,9.5,13.8,17.9,23.5,17.9s17.5-7.8,17.5-17.5s-7.8-17.6-17.5-17.5c-9.7,0.1-13.3,7.2-22.1,17.1 c-8.9,8.8-15.7,17.9-25.4,17.9s-17.5-7.8-17.5-17.5s7.8-17.5,17.5-17.5S86.2,38.6,93.9,46.4z" />
-      </svg>
-    </div>
-    <h1 class="w3-jumbo w3-animate-top"><img src="images/profile.jpg" alt="Profile picture" class="round-image"> Alex Palchyk</h1>
-    <hr class="w3-border-grey" style="margin:auto;width:40%">
-    <p class="w3-large w3-center">DevOps Engineer</p>
-    <p class="w3-center">
-      <a href="https://github.com/palchyk-alex">
-        <img src="images/icons/github.png" alt="My GitHub" style="width:45px;height:45px;">
-      </a>
-      <a href="https://www.linkedin.com/in/aliaksandr-p-1a7856240/">
-        <img src="images/icons/linkedin.png" alt="My LinkedIn" style="width:45px;height:45px;">
-      </a>
-      <p>Check out my <a href="certifications.html">Certifications</a></p>
+</section>
+
+<section class="section" aria-labelledby="about-heading">
+  <h2 class="section-header" id="about-heading" aria-label="About">~/about $ cat bio.md</h2>
+  <hr>
+  <div class="about-body">
+    <p>DevOps Engineer building and maintaining cloud infrastructure since 2021. Focused on Kubernetes, Terraform, and CI/CD automation across AWS, Azure and GCP environments.</p>
+    <p>I believe in infrastructure as code, small blast radiuses, and deploys that are boring by design.</p>
   </div>
-  <div class="w3-center w3-display-middle w3-container w3-padding-64">
-    
-  </div>
-  <div class="w3-display-bottomright w3-padding-large w3-small">
-    Icons by <a target="_blank" href="https://icons8.com">Icons8</a>
-  </div>
-  <div class="w3-display-bottommiddle w3-large">
-    From <b>Apr 2021</b>
-  </div>
-</div>
+</section>
+
+<section class="section" aria-labelledby="certs-heading">
+  <h2 class="section-header" id="certs-heading" aria-label="Certifications">~/certifications $ ls -la</h2>
+  <hr>
+  <ul class="cert-list">
+    <li><a class="cert-row" href="https://www.credly.com/earner/earned/badge/e59382fc-a521-419a-8723-b216587dca79" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.icons8.com/color/60/000000/kubernetes.png" alt="" class="cert-icon">
+      <span class="cert-title">CKA: Certified Kubernetes Administrator</span>
+      <span class="cert-arrow" aria-hidden="true">&rarr;</span>
+    </a></li>
+    <li><a class="cert-row" href="https://www.credly.com/earner/earned/badge/6f1f7610-bf54-42d9-9a68-ccc22b043c4e" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.icons8.com/color/60/000000/amazon-web-services.png" alt="" class="cert-icon">
+      <span class="cert-title">AWS Certified Solutions Architect &ndash; Associate</span>
+      <span class="cert-arrow" aria-hidden="true">&rarr;</span>
+    </a></li>
+    <li><a class="cert-row" href="https://www.credly.com/earner/earned/badge/3eef46eb-772c-4711-aefc-5e90eb9fdc6a" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.icons8.com/?size=100&id=XEnbmdky0kzu&format=png&color=000000" alt="" class="cert-icon">
+      <span class="cert-title">CCNA: Introduction to Networks</span>
+      <span class="cert-arrow" aria-hidden="true">&rarr;</span>
+    </a></li>
+    <li><a class="cert-row" href="https://www.credly.com/earner/earned/badge/c57b6493-d22c-44c0-891a-0ec83585ee3a" target="_blank" rel="noopener noreferrer">
+      <img src="images/icons/terraform.png" alt="" class="cert-icon">
+      <span class="cert-title">HashiCorp Certified: Terraform Associate (002)</span>
+      <span class="cert-arrow" aria-hidden="true">&rarr;</span>
+    </a></li>
+    <li><a class="cert-row" href="https://www.credly.com/earner/earned/badge/c7a43108-51f6-4e92-acc4-ebf4cfdcd3ab" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.icons8.com/color/60/000000/linux.png" alt="" class="cert-icon">
+      <span class="cert-title">Linux Foundation Certified Systems Administrator</span>
+      <span class="cert-arrow" aria-hidden="true">&rarr;</span>
+    </a></li>
+    <li><a class="cert-row" href="https://www.credly.com/earner/earned/badge/f5f95f05-9ab6-4656-a38c-1cf118440639" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.icons8.com/color/60/000000/microsoft.png" alt="" class="cert-icon">
+      <span class="cert-title">MTA: Networking Fundamentals</span>
+      <span class="cert-arrow" aria-hidden="true">&rarr;</span>
+    </a></li>
+  </ul>
+</section>
+
+<footer class="footer">
+  <span>from apr 2021</span>
+  <span>icons by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">icons8</a></span>
+  <span>~ $ <span class="cursor" aria-hidden="true"></span></span>
+</footer>
+
+<script>
+(function () {
+  var line1El = document.getElementById('line1');
+  var line2El = document.getElementById('line2');
+  var cursor = document.getElementById('cursor');
+  var LINE1 = '~ $ whoami';
+  var LINE2 = 'Alex Palchyk — DevOps Engineer';
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduced) {
+    line1El.insertBefore(document.createTextNode(LINE1), cursor);
+    line2El.appendChild(cursor);
+    line2El.insertBefore(document.createTextNode(LINE2), cursor);
+    return;
+  }
+
+  function type(el, text) {
+    return new Promise(function (resolve) {
+      if (cursor.parentNode !== el) el.appendChild(cursor);
+      var i = 0;
+      (function step() {
+        if (i >= text.length) return resolve();
+        cursor.insertAdjacentText('beforebegin', text[i++]);
+        setTimeout(step, 45 + Math.random() * 30);
+      })();
+    });
+  }
+
+  type(line1El, LINE1)
+    .then(function () { return new Promise(function (r) { setTimeout(r, 250); }); })
+    .then(function () { return type(line2El, LINE2); });
+})();
+</script>
 
 </body>
 </html>
