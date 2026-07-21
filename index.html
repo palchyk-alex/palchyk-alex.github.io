@@ -31,6 +31,12 @@ html, body {
   line-height: 1.5;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 a { color: inherit; text-decoration: none; }
 
 a:focus-visible {
@@ -40,13 +46,12 @@ a:focus-visible {
 }
 
 .intro {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem 1.5rem;
-  gap: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  gap: 1rem;
 }
 
 .terminal-line {
@@ -72,8 +77,8 @@ a:focus-visible {
 @keyframes blink { 50% { opacity: 0; } }
 
 .photo {
-  width: 90px;
-  height: 90px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0 0 1px rgba(0, 255, 156, 0.4);
@@ -85,8 +90,8 @@ a:focus-visible {
 }
 
 .socials img {
-  width: 45px;
-  height: 45px;
+  width: 36px;
+  height: 36px;
   display: block;
   transition: filter 0.15s ease;
 }
@@ -99,7 +104,7 @@ a:focus-visible {
 .section {
   max-width: 720px;
   margin: 0 auto;
-  padding: 6rem 1.5rem;
+  padding: 1rem 1.5rem;
 }
 
 .section-header {
@@ -112,29 +117,33 @@ a:focus-visible {
 .section hr {
   border: 0;
   border-top: 1px solid var(--green-a);
-  margin: 0.75rem 0 2rem;
+  margin: 0.5rem 0 1rem;
 }
 
 .about-body p {
   color: var(--body);
   max-width: 65ch;
-  margin: 0 auto 1rem;
-  line-height: 1.65;
+  margin: 0 auto 0.5rem;
+  line-height: 1.55;
 }
 
 .cert-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 1rem;
 }
 
 .cert-row {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
   border-radius: 4px;
   color: var(--green);
+  font-size: 0.9rem;
   transition: background 0.15s ease;
 }
 
@@ -142,8 +151,8 @@ a:focus-visible {
 .cert-row:hover .cert-arrow { color: var(--amber); }
 
 .cert-icon {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
 }
 
@@ -159,21 +168,21 @@ a:focus-visible {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 0.75rem 1.5rem;
   font-size: 0.85rem;
   color: var(--muted);
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .footer a { color: var(--muted); }
 .footer a:hover { color: var(--amber); }
 
 @media (max-width: 600px) {
-  .section { padding: 3rem 1rem; }
+  .section { padding: 1rem; }
   .terminal-line { font-size: 1.15rem; min-height: 3.5rem; }
-  .cert-icon { width: 28px; height: 28px; }
-  .cert-row { padding: 0.5rem 0.75rem; gap: 0.75rem; }
+  .cert-list { grid-template-columns: 1fr; }
   .cert-title {
     overflow: hidden;
     text-overflow: ellipsis;
